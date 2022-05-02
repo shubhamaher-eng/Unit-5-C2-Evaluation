@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button onclick="find()">Submit</button>
+    <div class="slideBox">
+        <img src="" alt="" id="">
+    </div>
+</body>
+<script>
+    let API_key=`e647d4ebfc3830374d0a3428e34fd878`;
+
+  async function find(){
+      try {
+        let name=document.getElementById("inp").value
+        let res = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_key}&units=metric`)
+                let data = await res.json()
+                console.log(data)
+
+      } catch (error) {
+          console.log(error)
+      }
+  }
+</script>
+</html>
